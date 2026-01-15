@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wedding Invitation | Asif & Aliya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --primary-pink: #c2185b;
+            --wedding-gold: #b8860b;
+            --reception-blue: #1a237e;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            /* Vibrant Moving Background */
+            background: linear-gradient(-45deg, #ff3366, #ff85a2, #24c6dc, #514a9d);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: fixed;
+            z-index: -1;
+            user-select: none;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) scale(0.5); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+
+        .card {
+            max-width: 480px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 55px;
+            color: var(--primary-pink);
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .main-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 6px solid #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            margin: 20px 0;
+        }
+
+        .event-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .event-card {
+            background: #fff;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+
+        .wedding-border { border-top: 6px solid var(--wedding-gold); }
+        .reception-border { border-top: 6px solid var(--reception-blue); }
+
+        .event-card h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .event-details {
+            font-size: 15px;
+            color: #555;
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+
+        .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fdfdfd;
+            border-radius: 20px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .qr-code {
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-gold { background: var(--wedding-gold); }
+        .btn-blue { background: var(--reception-blue); }
+
+        .map-btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        footer {
+            margin-top: 35px;
+            color: var(--primary-pink);
+            font-size: 18px;
+            font-family: 'Great Vibes', cursive;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        const colors = ['#ff4d6d', '#ffb3c1', '#ffffff', '#7209b7'];
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 25 + 15 + "px";
+        heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 6000);
+    }
+    setInterval(createHeart, 250);
+</script>
+
+<div class="card">
+    <p style="text-transform:uppercase; letter-spacing:3px; color:#777; font-size:11px; margin:0;">The Wedding Celebration of</p>
+   <a href="https://your-link-here.com" style="text-decoration: none; display: inline-block;">
+    <h1 style="margin: 10px 0;">𝑨𝒔𝒊𝒇 & 𝑨𝒍𝒊𝒚𝒂</h1>
+</a>
+    
+    <img src="Gemini_Generated_Image_fmk449fmk449fmk4 (1).png" alt="Asif and Aliya" class="main-photo">
+
+    <div class="event-grid">
+        
+        <div class="event-card wedding-border">
+            <h3>💍 The Wedding</h3>
+            <div class="event-details">
+                <strong>Sunday, 08 Feb 2026</strong><br>
+                Time: 7:00 PM Onwards<br>
+                <em>SFS Garden, Karimnagar</em>
+            </div>
+            <div class="qr-section">
+                <div id="weddingQR" class="qr-code"></div>
+                <a href="https://maps.google.com/?q=SFS+Garden+Karimnagar" class="map-btn btn-gold">Get Wedding Directions 📍</a>
+            </div>
+        </div>
+
+        <div class="event-card reception-border">
+            <h3>✨ The Reception</h3>
+            <div class="event-details">
+                <strong>Monday, 09 Feb 2026</strong><br>
+                Time: 8:00 PM Onwards<br>
+                <em> Crystal Convention, Karimnagar</em>
+            </div>
+            <div class="qr-section">
+                <div id="receptionQR" class="qr-code"></div>
+                <a href="https://maps.app.goo.gl/5HRoPzuUAg2wc6YQ6" class="map-btn btn-blue">Get Reception Directions 📍</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        Can't wait to celebrate with you!
+    </footer>
+</div>
+
+<script>
+    // Wedding QR Generation
+    new QRCode(document.getElementById("weddingQR"), {
+        text: "https://maps.app.goo.gl/2nPnjWGZcavityyB7",
+        width: 110,
+        height: 110,
+        colorDark : "#b8860b",
+        colorLight : "#ffffff"
+    });
+
+    // Reception QR Generation
+    new QRCode(document.getElementById("receptionQR"), {
+        text: "https://maps.app.goo.gl/5HRoPzuUAg2wc6YQ6",
+        width: 110,
+        height: 110,
+        colorDark : "#1a237e",
+        colorLight : "#ffffff"
+    });
+</script>
+
+</body>
+</html>
